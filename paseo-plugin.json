@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "skills-fork",
     "name":  "Skills",
     "description":  "Your fork of gpambrozio\u0027s Skills, which lists the skills an agent can use, renders each SKILL.md, and invokes it. Its Skills pill can move into the Pill hub\u0027s Tools pill.",
