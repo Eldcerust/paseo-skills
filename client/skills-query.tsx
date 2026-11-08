@@ -1,8 +1,9 @@
-import { useAgent, useRpc } from "@getpaseo/plugin/client";
+import { useAgent } from "@getpaseo/plugin/client";
 import { useQuery } from "@tanstack/react-query";
 import type { z } from "zod";
 
 import { listSkills } from "../shared/skills";
+import { useRpc } from "./hub-compat";
 
 type SkillsResult = z.infer<(typeof listSkills)["output"]>;
 

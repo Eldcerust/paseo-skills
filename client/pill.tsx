@@ -7,6 +7,7 @@ import { Icon } from "@getpaseo/plugin/client/react-native";
 import { useEffect } from "react";
 
 import { followAgents, type AgentList, type AgentUpdate } from "./agents";
+import { registerComposerPill } from "./hub-compat";
 import { createSkillsPopover } from "./popover";
 import { countEntries, useSkillsQuery } from "./skills-query";
 
@@ -69,8 +70,11 @@ export function contributePills(client: PluginClientContext) {
     // The icon needs the registration that is about to be created from it, so
     // it reaches the registration through this box rather than through a prop.
     const pill: { current?: PluginButtonRegistration } = {};
-    pill.current = client.addComposerPill({
-      id: "skills",
+    // Follows the Pill hub when one is running; otherwise it is the Skills pill it always was.
+    // Inside the hub the icon never mounts, so the count stays off and the tab reads "Skills".
+    pill.current = registerComposerPill(client, {
+      toolId: "skills",
+      glyph: "Sparkles",
       workspaceId,
       agentId,
       button: {

@@ -1,4 +1,4 @@
-import { type PluginHostProps, useAgent, usePaseo, useRpc } from "@getpaseo/plugin/client";
+import { type PluginHostProps, useAgent } from "@getpaseo/plugin/client";
 import { copyText, useToast } from "@getpaseo/plugin/client/react-native";
 import { useQuery } from "@tanstack/react-query";
 import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import type { z } from "zod";
 
+import { usePaseo, useRpc } from "./hub-compat";
 import { invocationText, sendInvocation } from "./invoke";
 import { useSkillsQuery } from "./skills-query";
 import { readSkill, ReportedSkillSchema, SkillEntrySchema } from "../shared/skills";
