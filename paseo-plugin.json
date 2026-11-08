@@ -1,8 +1,8 @@
 {
-  "id": "skills-hub",
-  "description": "Lists the skills an agent can use, renders each SKILL.md, and invokes it",
+  "id": "skills-fork",
+  "name": "Skills (fork)",
+  "description": "Your fork of gpambrozio's Skills, which lists the skills an agent can use, renders each SKILL.md, and invokes it. Its Skills pill can move into the Pill hub's Tools pill.",
   "requirements": {
     "paseo": ">=0.9.0"
-  },
-  "name": "Skills (Pill hub)"
+  }
 }
